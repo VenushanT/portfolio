@@ -190,7 +190,7 @@ const Hero = () => {
                   VIEW PROJECTS
                 </Button>
                 <a
-                  href="https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EVwYJ-mdQmFOt-VZqe8qFTMBlTmHXRnnWGlWJPSLXEKkxQ?e=JikusK&download=1"
+                  href="https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EVwYJ-mdQmFOt-VZqe8qFTMBbALp-udmt_unrn0e4r6QtA?e=vRFrih"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => {
@@ -198,7 +198,7 @@ const Hero = () => {
                     e.preventDefault();
                     
                     // Open the SharePoint download link in a new tab
-                    const downloadUrl = "https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EVwYJ-mdQmFOt-VZqe8qFTMBlTmHXRnnWGlWJPSLXEKkxQ?e=JikusK&download=1";
+                    const downloadUrl = "https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EYhVVEx0Z9ZJlHaDkCjH0foBg5yJJ8g8zznI1XWyPtPYVA?e=RFmGUq";
                     
                     // Method 1: Direct download attempt
                     const link = document.createElement("a");

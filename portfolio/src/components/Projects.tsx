@@ -1,6 +1,6 @@
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
-import { ExternalLink, Github, X, Calendar, Users, Zap } from "lucide-react";
+import { ExternalLink, Github, X, Calendar, Users, Zap, ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
 
 import carserviceImg from "../assets/carservice.png";
@@ -13,6 +13,7 @@ import deviceImg from "../assets/device.png";
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const projects = [
     {
@@ -168,7 +169,7 @@ const Projects = () => {
         {/* Featured Projects */}
         <div className="mb-20">
           <h3 className="text-3xl font-black mb-12 text-center uppercase tracking-wide">
-            <span className="text-orange-500">FEATURED PROJECTS</span>
+            <span className="text-orange-500"> PROJECTS</span>
           </h3>
           <div className="grid lg:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
@@ -228,10 +229,10 @@ const Projects = () => {
         {/* Other Projects */}
         <div>
           <h3 className="text-3xl font-black mb-12 text-center uppercase tracking-wide">
-            <span className="text-gray-400">SIDE MISSIONS</span>
+            <span className="text-gray-400">MORE PROJECTS</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project, index) => (
+            {(showAllProjects ? otherProjects : otherProjects.slice(0, 3)).map((project, index) => (
               <Card key={index} className="group p-6 bg-gradient-to-br from-gray-800/80 to-black/80 backdrop-blur-sm border border-gray-600/50 hover:shadow-xl hover:shadow-orange-500/15 rounded-xl">
                 <img 
                   src={project.image} 
@@ -279,6 +280,30 @@ const Projects = () => {
               </Card>
             ))}
           </div>
+          
+          {/* Show More/Show Less Button */}
+          {otherProjects.length > 3 && (
+            <div className="text-center mt-12">
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-bold uppercase tracking-wide hover:shadow-lg hover:shadow-orange-500/25 hover:scale-105 transition-all duration-300"
+                onClick={() => setShowAllProjects(!showAllProjects)}
+              >
+                {showAllProjects ? (
+                  <>
+                    <ArrowUp className="w-4 h-4 mr-2" />
+                    SHOW LESS
+                  </>
+                ) : (
+                  <>
+                    <ArrowDown className="w-4 h-4 mr-2" />
+                    SHOW MORE PROJECTS ({otherProjects.length - 3} MORE)
+                  </>
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
 

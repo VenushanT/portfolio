@@ -341,7 +341,7 @@ const About = () => {
             <p className="text-orange-500 font-bold uppercase mb-2">Featured Projects</p>
             <p className="text-gray-400 text-base font-medium max-w-2xl mx-auto leading-relaxed">
               Welcome! I am Venushan, a Full Stack Developer specializing in building robust, scalable, and innovative digital solutions. My expertise spans the MERN stack, Spring Boot, Python, and Java, enabling me to deliver high-quality applications tailored to client needs.<br />
-              <span className="text-orange-500 font-bold uppercase">Let’s build the future together.</span>
+              <span className="text-orange-500 font-bold uppercase">......</span>
             </p>
           </div>
         </div>
