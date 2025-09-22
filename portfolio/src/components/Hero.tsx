@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Code, Database, Cpu } from "lucide-react";
 import profilePic from "../assets/profile.jpg"; // Import the profile image
+import cvFile from "../assets/MY-CV1.pdf"; // Import the CV file
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
@@ -190,16 +191,30 @@ const Hero = () => {
                   VIEW PROJECTS
                 </Button>
                 <a
-                  href="/assets/MY-CV1.pdf"
-                  download
+                  href="/Venushan_CV.pdf"
+                  download="Venushan_CV.pdf"
                   onClick={(e) => {
-                    e.preventDefault();
-                    const link = document.createElement("a");
-                    link.href = "/assets/MY-CV1.pdf";
-                    link.download = "MY-CV1.pdf";
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                    // Enhanced download functionality with fallback
+                    try {
+                      // First try with public folder path
+                      const link = document.createElement("a");
+                      link.href = "/Venushan_CV.pdf";
+                      link.download = "Venushan_CV.pdf";
+                      link.target = "_blank";
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    } catch (error) {
+                      console.error('CV download failed:', error);
+                      // Fallback: try imported file
+                      const link = document.createElement("a");
+                      link.href = cvFile;
+                      link.download = "Venushan_CV.pdf";
+                      link.target = "_blank";
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }
                   }}
                 >
                   <Button 
