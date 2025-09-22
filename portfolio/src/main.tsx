@@ -1,4 +1,10 @@
-import '@splinetool/viewer';
+// Dynamic import for Spline viewer to improve initial load time
+import('@splinetool/viewer').then(() => {
+  console.log('Spline viewer loaded');
+}).catch(err => {
+  console.warn('Spline viewer failed to load:', err);
+});
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";

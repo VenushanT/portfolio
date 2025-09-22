@@ -78,6 +78,8 @@ const Hero = () => {
         <spline-viewer 
           url="https://prod.spline.design/lkW4aVxwj9OAw0fg/scene.splinecode"
           loading-anim-type="spinner-small-dark"
+          background="transparent"
+          loading="lazy"
           style={{ 
             width: '100%', 
             height: '100%',

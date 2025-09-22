@@ -130,15 +130,21 @@ const About = () => {
                 }}
               ></div>
 
-              {/* Spline viewer in the center */}
+              {/* Optimized Spline viewer in the center with faster loading */}
               <div className="absolute inset-12 rounded-full overflow-hidden border-2 border-orange-500/30 backdrop-blur-sm">
+                {/* Fallback background while Spline loads */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-900/30 via-black to-red-900/30 rounded-full"></div>
+                
                 <spline-viewer 
                   url="https://prod.spline.design/4VEX8s8-niUeURYk/scene.splinecode"
+                  loading-anim-type="spinner-small-dark"
+                  background="transparent"
                   style={{ 
                     width: '100%', 
                     height: '100%',
                     borderRadius: '50%',
                     filter: 'brightness(1.2) contrast(1.1)',
+                    opacity: 1,
                   }}
                 ></spline-viewer>
                 
