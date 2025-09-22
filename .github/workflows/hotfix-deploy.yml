@@ -73,7 +73,7 @@ jobs:
           
       - name: 📬 Notify emergency deployment
         uses: 8398a7/action-slack@v3
-        if: always()
+        if: always() && secrets.SLACK_WEBHOOK_URL != ''
         with:
           status: ${{ job.status }}
           channel: '#emergency'

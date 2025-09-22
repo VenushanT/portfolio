@@ -43,6 +43,7 @@ jobs:
       - name: 🚀 Deploy to Vercel Preview
         id: deploy
         uses: amondnet/vercel-action@v25
+        if: secrets.VERCEL_TOKEN != ''
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
@@ -52,6 +53,7 @@ jobs:
           
       - name: 🌐 Deploy to Netlify Preview
         uses: netlify/actions/cli@master
+        if: secrets.NETLIFY_AUTH_TOKEN != ''
         with:
           args: deploy --dir=portfolio/dist --alias=pr-${{ github.event.number }}
         env:
@@ -78,8 +80,10 @@ jobs:
             
             | Platform | Status | URL |
             |----------|--------|-----|
-            | ⚡ Vercel | ✅ Deployed | ${{ steps.deploy.outputs.url }} |
-            | 🌐 Netlify | ✅ Deployed | https://pr-${{ github.event.number }}--YOUR_SITE_NAME.netlify.app |
+            | ⚡ Vercel | ${steps.deploy.outcome === 'success' ? '✅ Deployed' : '⏭️ Skipped'} | ${steps.deploy.outputs.url || 'N/A'} |
+            | 🌐 Netlify | ${env.NETLIFY_AUTH_TOKEN ? '✅ Deployed' : '⏭️ Skipped'} | ${env.NETLIFY_AUTH_TOKEN ? `https://pr-${{ github.event.number }}--YOUR_SITE_NAME.netlify.app` : 'N/A'} |
+            
+            ${!env.VERCEL_TOKEN && !env.NETLIFY_AUTH_TOKEN ? '⚠️ **Note**: Deployment secrets not configured. Add VERCEL_TOKEN and/or NETLIFY_AUTH_TOKEN to enable deployments.' : ''}
             
             🔄 **Auto-updated on every commit to this PR**
             
