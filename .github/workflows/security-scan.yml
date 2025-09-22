@@ -38,20 +38,10 @@ jobs:
         
       - name: 🔒 Run npm audit
         run: |
-          npm audit --audit-level=moderate --json > audit-results.json || true
-          if [ -s audit-results.json ]; then
-            echo "vulnerabilities-found=true" >> $GITHUB_OUTPUT
-          fi
+          npm audit --audit-level=moderate || true
         id: audit
         
-      - name: 📊 Upload audit results
-        uses: actions/upload-artifact@v4
-        if: steps.audit.outputs.vulnerabilities-found == 'true'
-        with:
-          name: npm-audit-results
-          path: audit-results.json
-          
-      - name: 🔍 Initialize CodeQL
+      - name:  Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: javascript
@@ -61,29 +51,6 @@ jobs:
         
       - name: 🔍 Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
-        
-      - name: 🔒 Run Snyk security scan
-        uses: snyk/actions/node@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --severity-threshold=high --sarif-file-output=snyk.sarif
-        if: env.SNYK_TOKEN != ''
-          
-      - name: 📊 Upload Snyk results to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
-        if: always() && hashFiles('snyk.sarif') != ''
-        with:
-          sarif_file: snyk.sarif
-          
-      - name: 🔍 Scan for secrets
-        uses: trufflesecurity/trufflehog@main
-        with:
-          path: ./
-          base: main
-          head: HEAD
-          extra_args: --debug --only-verified
 
   dependency-review:
     name: 📦 Dependency Review

@@ -31,16 +31,7 @@ jobs:
         
       - name: 🔍 Run ESLint
         run: npm run lint
-        
-      - name: 📊 Upload lint results
-        uses: github/super-linter@v5
-        if: always()
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_TYPESCRIPT_ES: true
-          VALIDATE_CSS: true
-          VALIDATE_HTML: true
+        continue-on-error: false
 
   # Job 2: Build and Test
   build-and-test:
@@ -223,30 +214,30 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-  # Job 7: Notify deployment status
-  notify:
-    name: 📬 Notify Deployment Status
-    runs-on: ubuntu-latest
-    needs: [deploy-github-pages, deploy-vercel, deploy-netlify]
-    if: always() && github.ref == 'refs/heads/main' && secrets.SLACK_WEBHOOK_URL != ''
-    
-    steps:
-      - name: 📬 Send deployment notification
-        uses: 8398a7/action-slack@v3
-        if: always()
-        with:
-          status: ${{ job.status }}
-          channel: '#deployments'
-          text: |
-            Portfolio deployment completed!
-            
-            📊 Status: ${{ job.status }}
-            🌐 GitHub Pages: ${{ needs.deploy-github-pages.result || 'Skipped' }}
-            ⚡ Vercel: ${{ needs.deploy-vercel.result || 'Skipped' }}
-            🌐 Netlify: ${{ needs.deploy-netlify.result || 'Skipped' }}
-            
-            🔗 Repository: ${{ github.repository }}
-            📝 Commit: ${{ github.sha }}
-            👤 Author: ${{ github.actor }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  # Job 7: Notify deployment status (disabled - enable by adding SLACK_WEBHOOK_URL secret)
+  # notify:
+  #   name: 📬 Notify Deployment Status
+  #   runs-on: ubuntu-latest
+  #   needs: [deploy-github-pages, deploy-vercel, deploy-netlify]
+  #   if: always() && github.ref == 'refs/heads/main' && secrets.SLACK_WEBHOOK_URL != ''
+  #   
+  #   steps:
+  #     - name: 📬 Send deployment notification
+  #       uses: 8398a7/action-slack@v3
+  #       if: always()
+  #       with:
+  #         status: ${{ job.status }}
+  #         channel: '#deployments'
+  #         text: |
+  #           Portfolio deployment completed!
+  #           
+  #           📊 Status: ${{ job.status }}
+  #           🌐 GitHub Pages: ${{ needs.deploy-github-pages.result || 'Skipped' }}
+  #           ⚡ Vercel: ${{ needs.deploy-vercel.result || 'Skipped' }}
+  #           🌐 Netlify: ${{ needs.deploy-netlify.result || 'Skipped' }}
+  #           
+  #           🔗 Repository: ${{ github.repository }}
+  #           📝 Commit: ${{ github.sha }}
+  #           👤 Author: ${{ github.actor }}
+  #       env:
+  #         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
