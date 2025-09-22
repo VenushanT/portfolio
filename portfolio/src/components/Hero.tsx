@@ -1,7 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Code, Database, Cpu } from "lucide-react";
 import profilePic from "../assets/profile.jpg"; // Import the profile image
-import cvFile from "../assets/MY-CV1.pdf"; // Import the CV file
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
@@ -191,30 +190,29 @@ const Hero = () => {
                   VIEW PROJECTS
                 </Button>
                 <a
-                  href="/Venushan_CV.pdf"
-                  download="Venushan_CV.pdf"
+                  href="https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EVwYJ-mdQmFOt-VZqe8qFTMBlTmHXRnnWGlWJPSLXEKkxQ?e=JikusK&download=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => {
-                    // Enhanced download functionality with fallback
-                    try {
-                      // First try with public folder path
-                      const link = document.createElement("a");
-                      link.href = "/Venushan_CV.pdf";
-                      link.download = "Venushan_CV.pdf";
-                      link.target = "_blank";
-                      document.body.appendChild(link);
-                      link.click();
-                      document.body.removeChild(link);
-                    } catch (error) {
-                      console.error('CV download failed:', error);
-                      // Fallback: try imported file
-                      const link = document.createElement("a");
-                      link.href = cvFile;
-                      link.download = "Venushan_CV.pdf";
-                      link.target = "_blank";
-                      document.body.appendChild(link);
-                      link.click();
-                      document.body.removeChild(link);
-                    }
+                    // Enhanced download functionality for SharePoint link
+                    e.preventDefault();
+                    
+                    // Open the SharePoint download link in a new tab
+                    const downloadUrl = "https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EVwYJ-mdQmFOt-VZqe8qFTMBlTmHXRnnWGlWJPSLXEKkxQ?e=JikusK&download=1";
+                    
+                    // Method 1: Direct download attempt
+                    const link = document.createElement("a");
+                    link.href = downloadUrl;
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Method 2: Fallback - open in new window if direct download fails
+                    setTimeout(() => {
+                      window.open(downloadUrl, '_blank', 'noopener,noreferrer');
+                    }, 100);
                   }}
                 >
                   <Button 

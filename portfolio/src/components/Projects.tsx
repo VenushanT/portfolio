@@ -272,7 +272,7 @@ const Projects = () => {
                   <Button size="sm" variant="outline" className="flex-1 border-gray-500 text-gray-400 hover:bg-gray-500 hover:text-white font-bold uppercase text-xs" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-3 h-3 mr-1" />
-                      FORGE
+                      CODE
                     </a>
                   </Button>
                 </div>
