@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   build: {
-    outDir: "dist",
+    outDir: "../dist",
     emptyOutDir: true,
     sourcemap: false,
     rollupOptions: {

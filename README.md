@@ -7,6 +7,14 @@
 
 > A modern, responsive portfolio website showcasing full-stack development projects with advanced 3D visuals, built with React, TypeScript, and enterprise-grade CI/CD pipeline.
 
+## 🎥 Portfolio Showcase
+
+<div align="center">
+  <img src="https://github.com/VenushanT/portfolio/blob/main/portfoliogif.gif" alt="Portfolio Website Demo" width="800" />
+</div>
+
+*Interactive portfolio featuring modern design, 3D animations, and smooth transitions*
+
 ## 🌟 Live Demo
 
 - **🚀 Primary**: [Vercel Deployment](https://your-portfolio-vercel.app)
@@ -115,6 +123,8 @@ portfolio/
 │   │   └── types/        # TypeScript definitions
 │   ├── index.html        # HTML template
 │   └── vite.config.ts    # Vite configuration
+├── assets/               # Demo GIFs and screenshots
+│   └── portfolio-demo.gif
 ├── README.md              # Project documentation
 ├── package.json          # Dependencies and scripts
 └── CI-CD-DOCS.md         # CI/CD pipeline documentation

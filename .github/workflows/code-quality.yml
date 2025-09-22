@@ -60,7 +60,7 @@ jobs:
         
       - name: 📊 SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
-        if: github.actor != 'dependabot[bot]' && secrets.SONAR_TOKEN != ''
+        if: github.actor != 'dependabot[bot]'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -91,7 +91,7 @@ jobs:
         uses: github/webpack-bundle-analyzer@v1
         if: always()
         with:
-          bundle_path: portfolio/dist
+          bundle_path: dist
           
       - name: 📊 Bundle size report
         uses: actions/github-script@v7
@@ -101,7 +101,7 @@ jobs:
             const path = require('path');
             
             // Get bundle stats
-            const distPath = path.join(process.cwd(), 'portfolio/dist');
+            const distPath = path.join(process.cwd(), 'dist');
             
             if (fs.existsSync(distPath)) {
               const files = fs.readdirSync(distPath, { withFileTypes: true });
