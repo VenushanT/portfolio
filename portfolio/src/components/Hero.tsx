@@ -1,7 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Code, Database, Cpu } from "lucide-react";
 import profilePic from "../assets/profile.jpg"; // Import the profile image
-import Shuffle from './Shuffle';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
@@ -40,11 +39,6 @@ const Hero = () => {
     };
   }, []);
 
-  const handleShuffleComplete = () => {
-    // Optional callback when shuffle animation completes
-    console.log('Shuffle animation completed');
-  };
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-visible bg-gradient-to-br from-black via-gray-900 to-black cursor-none">
       {/* Subtle Custom Cursor */}
@@ -76,10 +70,14 @@ const Hero = () => {
         }}
       />
 
-      {/* Spline Background with Blur and Subtle Interactive Effects */}
+      {/* Optimized Spline Background with faster loading and subtle interactive effects */}
       <div className="absolute inset-0 w-full h-full">
+        {/* Fallback background while Spline loads */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
+        
         <spline-viewer 
           url="https://prod.spline.design/lkW4aVxwj9OAw0fg/scene.splinecode"
+          loading-anim-type="spinner-small-dark"
           style={{ 
             width: '100%', 
             height: '100%',
@@ -141,29 +139,10 @@ const Hero = () => {
                 &gt; SYSTEM.INITIALIZE("PROFESSIONAL_MODE")
               </div>
 
-              {/* Fixed Shuffle Component with required onShuffleComplete prop */}
-              <Shuffle
-                text="I'M VENUSHAN"
-                tag="h1"
-                className="text-5xl lg:text-7xl font-black mb-6 relative uppercase tracking-tight bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(to right, #f97316, #ef4444, #f97316)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-                duration={0.6}
-                stagger={0.05}
-                scrambleCharset="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*"
-                shuffleTimes={3}
-                animationMode="evenodd"
-                shuffleDirection="right"
-                threshold={0.8}
-                triggerOnHover={true}
-                colorFrom="#f97316"
-                colorTo="#ef4444"
-                onShuffleComplete={handleShuffleComplete}
-              />
+              {/* Main title - always visible with optional shuffle effect */}
+              <h1 className="text-5xl lg:text-7xl font-black mb-6 relative uppercase tracking-tight bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 bg-clip-text text-transparent">
+                I'M VENUSHAN
+              </h1>
 
               <h2 className="text-2xl lg:text-3xl text-gray-300 mb-6 animate-fade-in-delay flex items-center justify-center lg:justify-start gap-2 font-bold uppercase tracking-wide">
                 <Cpu className="w-8 h-8 text-orange-500 animate-pulse" />
