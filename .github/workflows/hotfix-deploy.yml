@@ -1,0 +1,91 @@
+name: 🔥 Hotfix Deploy
+
+on:
+  push:
+    branches: [ hotfix/* ]
+  workflow_dispatch:
+    inputs:
+      deploy_target:
+        description: 'Deployment target'
+        required: true
+        default: 'vercel'
+        type: choice
+        options:
+        - vercel
+        - netlify
+        - github-pages
+        - all
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  emergency-deploy:
+    name: 🚨 Emergency Deployment
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: emergency-hotfix
+      
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📋 Install dependencies
+        run: npm ci
+        
+      - name: 🏗️ Build project
+        run: npm run build
+        env:
+          CI: true
+          
+      - name: 🚀 Deploy to Vercel
+        if: github.event.inputs.deploy_target == 'vercel' || github.event.inputs.deploy_target == 'all' || github.ref_type == 'branch'
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: ./
+          
+      - name: 🌐 Deploy to Netlify
+        if: github.event.inputs.deploy_target == 'netlify' || github.event.inputs.deploy_target == 'all' || github.ref_type == 'branch'
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --prod --dir=portfolio/dist
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          
+      - name: 📄 Deploy to GitHub Pages
+        if: github.event.inputs.deploy_target == 'github-pages' || github.event.inputs.deploy_target == 'all' || github.ref_type == 'branch'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./portfolio/dist
+          
+      - name: 📬 Notify emergency deployment
+        uses: 8398a7/action-slack@v3
+        if: always()
+        with:
+          status: ${{ job.status }}
+          channel: '#emergency'
+          text: |
+            🚨 **EMERGENCY HOTFIX DEPLOYMENT** 🚨
+            
+            📊 Status: ${{ job.status }}
+            🎯 Target: ${{ github.event.inputs.deploy_target || 'all platforms' }}
+            🌿 Branch: ${{ github.ref_name }}
+            👤 Triggered by: ${{ github.actor }}
+            📝 Commit: ${{ github.sha }}
+            
+            🔗 Repository: ${{ github.repository }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

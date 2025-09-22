@@ -1,0 +1,27 @@
+.shuffle-parent {
+  position: relative;
+}
+
+.shuffle-char, 
+.shuffle-word, 
+.shuffle-line {
+  position: relative;
+}
+
+.shuffle-parent.is-ready .shuffle-char {
+  opacity: 1;
+}
+
+.shuffle-parent:not(.is-ready) .shuffle-char {
+  opacity: 0;
+}
+
+/* Optional: Add some smooth transitions */
+.shuffle-char {
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure proper overflow handling for the animation */
+.shuffle-parent * {
+  overflow: visible !important;
+}
