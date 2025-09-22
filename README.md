@@ -10,7 +10,7 @@
 ## 🎥 Portfolio Showcase
 
 <div align="center">
-  <img src="assets/portfoliogif.gif" alt="Portfolio Website Demo" width="800" />
+  <img src="https://github.com/VenushanT/portfolio/blob/main/portfoliogif.gif" alt="Portfolio Website Demo" width="800" />
 </div>
 
 *Interactive portfolio featuring modern design, 3D animations, and smooth transitions*
