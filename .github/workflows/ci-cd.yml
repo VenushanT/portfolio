@@ -141,11 +141,13 @@ jobs:
         run: npm run build
         env:
           CI: true
-          PUBLIC_URL: /portfolio
+          BASE_URL: /portfolio/
           
       - name: 📄 Setup Pages
         uses: actions/configure-pages@v4
-        
+        with:
+          enablement: true
+          
       - name: 📦 Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
