@@ -59,7 +59,7 @@ const Projects = () => {
       teamSize: "3 developers",
       challenges: "Integrating Gemini AI API and ensuring data security"
     },
-    {
+    /*{
       title: "PilgrimFlow",
       description: "PilgrimFlow is a smart system that uses AI to count people and manage water distribution in real-time, helping organizers prevent shortages at large events like the Kataragama pilgrimage.",
       tech: ["Python & NumPy", "OpenCV", "Roboflow Inference API", "IP Camera"],
@@ -78,7 +78,7 @@ const Projects = () => {
       duration: "5 months",
       teamSize: "1 developer",
       challenges: "Accurate crowd counting in varying lighting conditions"
-    },
+    },*/
     {
       title: "ElectroWave",
       description: "ElectroWave is a full-stack e-commerce platform built with the MERN stack for buying and selling electronics.",

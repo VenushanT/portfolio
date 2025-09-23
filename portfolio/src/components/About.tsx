@@ -81,7 +81,7 @@ const About = () => {
             <div className="bg-gradient-to-br from-gray-800/80 to-black/80 backdrop-blur-sm border border-gray-600/50 rounded-2xl p-8 h-44 relative overflow-hidden group hover:shadow-xl hover:shadow-orange-500/15 transition-all duration-300">
               <div className="mb-4">
                 <p className="text-orange-400 text-xs uppercase tracking-wider mb-2 font-bold">ONGOING PROJECT</p>
-                <h3 className="text-white text-lg font-black mb-3 uppercase">Developing AI to count people and manage water distribution in real-time</h3>
+                <h3 className="text-white text-lg font-black mb-3 uppercase">Developing PilgrimFlow</h3>
               </div>
               <div className="bg-black/70 rounded-lg p-3 font-mono text-xs border border-gray-800">
                 <div className="text-orange-400 mb-1">{"// Professional software engineering in progress"}</div>
