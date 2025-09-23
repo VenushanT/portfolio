@@ -1,8 +1,9 @@
-name: Deploy Static Files
+name: Deploy Static Files (DISABLED)
 
 on:
-  push:
-    branches: [ main ]
+  # Disabled to prevent conflicts with official GitHub Pages workflow
+  # push:
+  #   branches: [ main ]
   workflow_dispatch:
 
 permissions:

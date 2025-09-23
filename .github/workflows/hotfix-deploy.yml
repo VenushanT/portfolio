@@ -1,8 +1,9 @@
-name: 🔥 Hotfix Deploy
+name: 🔥 Hotfix Deploy (DISABLED)
 
 on:
-  push:
-    branches: [ hotfix/* ]
+  # Disabled to prevent conflicts with official GitHub Pages workflow
+  # push:
+  #   branches: [ hotfix/* ]
   workflow_dispatch:
     inputs:
       deploy_target:
