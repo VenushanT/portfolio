@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Code, Database, Cpu } from "lucide-react";
 import profilePic from "../assets/profile.jpg"; // Import the profile image
 import { useState, useEffect } from 'react';
+import SplineViewer from './SplineViewer';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -75,7 +76,7 @@ const Hero = () => {
         {/* Fallback background while Spline loads */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
         
-        <spline-viewer 
+        <SplineViewer 
           url="https://prod.spline.design/lkW4aVxwj9OAw0fg/scene.splinecode"
           loading-anim-type="spinner-small-dark"
           background="transparent"
@@ -88,7 +89,7 @@ const Hero = () => {
             pointerEvents: 'none',
             transform: `perspective(1000px) rotateX(${mouseNormalized.y * 2}deg) rotateY(${mouseNormalized.x * 2}deg) scale(${1 + Math.abs(mouseNormalized.x + mouseNormalized.y) * 0.02})`
           }}
-        ></spline-viewer>
+        />
         
         {/* Square border inside the spline viewer */}
         <div className="absolute inset-8 border-2 border-orange-500/30 pointer-events-none"></div>
