@@ -198,7 +198,7 @@ const Hero = () => {
                     e.preventDefault();
                     
                     // Open the SharePoint download link in a new tab
-                    const downloadUrl = "https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EYhVVEx0Z9ZJlHaDkCjH0foBg5yJJ8g8zznI1XWyPtPYVA?e=RFmGUq";
+                    const downloadUrl = "https://mysliit-my.sharepoint.com/:b:/g/personal/it22082824_my_sliit_lk/EYhVVEx0Z9ZJlHaDkCjH0foBg5yJJ8g8zznI1XWyPtPYVA?e=Vvir5r";
                     
                     // Method 1: Direct download attempt
                     const link = document.createElement("a");
