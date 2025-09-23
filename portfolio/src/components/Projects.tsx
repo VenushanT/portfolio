@@ -121,19 +121,22 @@ const Projects = () => {
     },
     {
       title: "AI-Device-Recommendation-Platform",
-      description: "Python-based ML model for predictive analytics using scikit-learn. Includes data preprocessing, model training, and web interface.",
-      tech: ["Python", "Scikit-learn", "Flask", "NumPy", "Matplotlib"],
+      description: "Next.js 14 AI-powered recommendation platform using Google Gemini API for smart device suggestions. Includes TypeScript implementation, Tailwind CSS styling, multi-category support, and responsive web interface.",
+      tech: ["TypeScript", "React 18 ", "Gemini AI ","Tailwind CSS"],
       image: deviceImg, // Fixed: use the imported variable
       github: "https://github.com/VenushanT/-crime-report",
       live: "#",
       featured: false,
-      detailedDescription: "An intelligent device recommendation system that uses machine learning to suggest the best devices based on user preferences, usage patterns, and budget constraints.",
+      detailedDescription: "An AI-driven device recommendation platform that leverages Google Gemini AI to provide personalized technology suggestions across laptops, smartphones, headphones, and keyboards based on user needs, budget, and usage patterns.",
       features: [
-        "Machine learning recommendations",
-        "User preference analysis",
-        "Price comparison integration",
-        "Performance benchmarking",
-        "Interactive visualization"
+        "AI-powered device recommendations",
+"Natural language query processing",
+"Multi-category device support", 
+"Budget-based filtering system",
+"Real-time recommendation engine",
+"Responsive cross-device design",
+"Performance vs price analysis",
+"Intelligent reasoning explanations"
       ],
       duration: "2 weeks",
       teamSize: "1 developer",
