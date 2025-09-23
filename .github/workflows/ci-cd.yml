@@ -119,6 +119,7 @@ jobs:
       contents: read
       pages: write
       id-token: write
+      actions: write
       
     environment:
       name: github-pages
@@ -147,6 +148,7 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           enablement: true
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: 📦 Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
