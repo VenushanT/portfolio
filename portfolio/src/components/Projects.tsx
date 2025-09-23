@@ -35,7 +35,7 @@ const Projects = () => {
         "Customer notification system",
         "Service technician assignment and tracking"
       ],
-      duration: "3 months",
+      duration: "5 weeks",
       teamSize: "4 developers",
       challenges: "Implementing real-time updates and complex scheduling algorithms while ensuring data consistency across multiple user sessions"
     },
@@ -55,8 +55,8 @@ const Projects = () => {
         "Multi-language support",
         "Mobile-responsive interface"
       ],
-      duration: "4 months",
-      teamSize: "3 developers",
+      duration: "2 weeks",
+      teamSize: "1 developer",
       challenges: "Integrating Gemini AI API and ensuring data security"
     },
     /*{
@@ -95,7 +95,7 @@ const Projects = () => {
         "User reviews and ratings",
         "Inventory management"
       ],
-      duration: "2 months",
+      duration: "1 week",
       teamSize: "2 developers",
       challenges: "Implementing complex product filtering and comparison features"
     },
@@ -115,7 +115,7 @@ const Projects = () => {
         "Payment escrow service",
         "Review and rating system"
       ],
-      duration: "6 months",
+      duration: "2 weeks",
       teamSize: "3 developers",
       challenges: "Developing accurate skill matching algorithms"
     },
@@ -135,8 +135,8 @@ const Projects = () => {
         "Performance benchmarking",
         "Interactive visualization"
       ],
-      duration: "3 months",
-      teamSize: "2 developers",
+      duration: "2 weeks",
+      teamSize: "1 developer",
       challenges: "Training accurate ML models with limited data"
     }
   ];
