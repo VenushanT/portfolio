@@ -37,5 +37,9 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "json.schemaDownload.enable": false,
-  "json.validate.enable": true
+  "json.validate.enable": true,
+  "json.format.enable": true,
+  "json.schemas": [],
+  "schemaDownload.enable": false,
+  "http.proxySupport": "off"
 }
