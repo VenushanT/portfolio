@@ -9,6 +9,7 @@ import waterManagementImg from "../assets/water-maagement.png";
 import electrowaveImg from "../assets/electrowave .png";
 import skillhiveImg from "../assets/skillhive.png";
 import deviceImg from "../assets/device.png";
+import portfolio from "../assets/portfolio.png";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -123,7 +124,7 @@ const Projects = () => {
       title: "PORTFOLIO WEBSITE",
       description: "Modern responsive portfolio website built with React 18, TypeScript, and Tailwind CSS. Features interactive 3D elements using Spline, smooth animations with GSAP, and a fully responsive design optimized for all devices.",
       tech: ["React 18", "TypeScript", "Tailwind CSS", "Spline 3D", "GSAP", "Vite"],
-      image: deviceImg,
+      image: portfolio,
       github: "https://github.com/VenushanT/portfolio",
       live: "https://venushant.github.io/portfolio/",
       featured: false,
