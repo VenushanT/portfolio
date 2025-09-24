@@ -105,8 +105,8 @@ const Projects = () => {
       description: "RESTful API built with Spring Boot and JPA. Features JWT authentication, role-based access control, and comprehensive task management.",
       tech: ["Spring Boot (for the REST API)", "React", "Tailwind CSS", "MongoDB", "OAuth 2.0"],
       image: skillhiveImg,
-      github: "https://github.com/VenushanT/skillhive",
-      live: "https://github.com/VenushanT/skillhive",
+      github: "https://github.com/VenushanT/PAF-skill_hive",
+      live: "https://github.com/VenushanT/PAF-skill_hive",
       featured: false,
       detailedDescription: "A professional networking and skill-sharing platform that connects freelancers with clients. Includes project management tools, secure messaging, and payment processing.",
       features: [
