@@ -120,28 +120,28 @@ const Projects = () => {
       challenges: ""
     },
     {
-  title: "PORTFOLIO WEBSITE",
-  description: "Modern responsive portfolio website built with React 18, TypeScript, and Tailwind CSS. Features interactive 3D elements using Spline, smooth animations with GSAP, and a fully responsive design optimized for all devices.",
-  tech: ["React 18", "TypeScript", "Tailwind CSS", "Spline 3D", "GSAP", "Vite"],
-  image: deviceImg,
-  github: "https://github.com/VenushanT/portfolio",
-  live: "https://venushant.github.io/portfolio/",
-  featured: false,
-  detailedDescription: "A modern, interactive portfolio website showcasing full-stack development skills. Built with cutting-edge technologies including React 18, TypeScript, and Tailwind CSS for optimal performance and maintainability. Features stunning 3D interactive elements powered by Spline, smooth animations using GSAP, and a fully responsive design that works seamlessly across all devices from mobile to desktop.",
-  features: [
-    "Interactive 3D elements and animations",
-    "Fully responsive design for all devices",
-    "Modern UI/UX with smooth transitions",
-    "Optimized performance and loading",
-    "Clean, maintainable codebase",
-    "SEO-friendly structure",
-    "CI/CD pipeline with GitHub Actions",
-    "Professional project showcase"
-  ],
-  duration: "3 weeks",
-  teamSize: "1 developer",
-  challenges: "Integrating complex 3D elements while maintaining optimal performance across all devices and implementing smooth responsive transitions without compromising loading speed"
-},
+      title: "PORTFOLIO WEBSITE",
+      description: "Modern responsive portfolio website built with React 18, TypeScript, and Tailwind CSS. Features interactive 3D elements using Spline, smooth animations with GSAP, and a fully responsive design optimized for all devices.",
+      tech: ["React 18", "TypeScript", "Tailwind CSS", "Spline 3D", "GSAP", "Vite"],
+      image: deviceImg,
+      github: "https://github.com/VenushanT/portfolio",
+      live: "https://venushant.github.io/portfolio/",
+      featured: false,
+      detailedDescription: "A modern, interactive portfolio website showcasing full-stack development skills. Built with cutting-edge technologies including React 18, TypeScript, and Tailwind CSS for optimal performance and maintainability. Features stunning 3D interactive elements powered by Spline, smooth animations using GSAP, and a fully responsive design that works seamlessly across all devices from mobile to desktop.",
+      features: [
+        "Interactive 3D elements and animations",
+        "Fully responsive design for all devices",
+        "Modern UI/UX with smooth transitions",
+        "Optimized performance and loading",
+        "Clean, maintainable codebase",
+        "SEO-friendly structure",
+        "CI/CD pipeline with GitHub Actions",
+        "Professional project showcase"
+      ],
+      duration: "3 weeks",
+      teamSize: "1 developer",
+      challenges: "Integrating complex 3D elements while maintaining optimal performance across all devices and implementing smooth responsive transitions without compromising loading speed"
+    },
     {
       title: "AI-Device-Recommendation-Platform",
       description: "Next.js 14 AI-powered recommendation platform using Google Gemini API for smart device suggestions. Includes TypeScript implementation, Tailwind CSS styling, multi-category support, and responsive web interface.",
@@ -165,7 +165,7 @@ const Projects = () => {
       teamSize: "1 developer",
       challenges: "Securing API keys and preventing abuse without proper rate limiting or rotation mechanisms"
     }
-    
+
   ];
 
   const featuredProjects = projects.filter(project => project.featured);
@@ -239,12 +239,10 @@ const Projects = () => {
                       variant="outline"
                       size="sm"
                       className="w-full sm:w-auto border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-bold uppercase tracking-wide transition-all duration-300"
-                      asChild
+                      onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        VIEW CODE
-                      </a>
+                      <Github className="w-4 h-4 mr-2" />
+                      VIEW CODE
                     </Button>
                   </div>
                 </div>
@@ -301,12 +299,10 @@ const Projects = () => {
                     size="sm"
                     variant="outline"
                     className="w-full sm:flex-1 border-gray-500 text-gray-400 hover:bg-gray-500 hover:text-white font-bold uppercase text-xs transition-all duration-300"
-                    asChild
+                    onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
                   >
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-3 h-3 mr-1" />
-                      CODE
-                    </a>
+                    <Github className="w-3 h-3 mr-1" />
+                    CODE
                   </Button>
                 </div>
               </Card>
@@ -427,12 +423,10 @@ const Projects = () => {
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                 <Button
                   className="w-full sm:flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold uppercase tracking-wide transition-all duration-300"
-                  asChild
+                  onClick={() => window.open(selectedProject.github, '_blank', 'noopener,noreferrer')}
                 >
-                  <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Source Code
-                  </a>
+                  <Github className="w-4 h-4 mr-2" />
+                  View Source Code
                 </Button>
                 <Button
                   variant="outline"
