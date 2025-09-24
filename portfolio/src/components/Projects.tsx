@@ -140,7 +140,7 @@ const Projects = () => {
       ],
       duration: "2 weeks",
       teamSize: "1 developer",
-      challenges: "Training accurate ML models with limited data"
+      challenges: "Securing API keys and preventing abuse without proper rate limiting or rotation mechanisms"
     }
   ];
 
