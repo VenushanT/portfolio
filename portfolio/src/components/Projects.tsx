@@ -85,7 +85,7 @@ const Projects = () => {
       tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT (JSON Web Web Tokens)"],
       image: electrowaveImg,
       github: "https://github.com/VenushanT/ElectroWave",
-      live: "#",
+      live: "https://github.com/VenushanT/ElectroWave",
       featured: false,
       detailedDescription: "A comprehensive e-commerce platform specifically designed for electronics retail. Features secure payment processing, product comparison tools, and advanced search capabilities.",
       features: [
@@ -105,7 +105,7 @@ const Projects = () => {
       tech: ["Spring Boot (for the REST API)", "React", "Tailwind CSS", "MongoDB", "OAuth 2.0"],
       image: skillhiveImg,
       github: "https://github.com/VenushanT/skillhive",
-      live: "#",
+      live: "https://github.com/VenushanT/skillhive",
       featured: false,
       detailedDescription: "A professional networking and skill-sharing platform that connects freelancers with clients. Includes project management tools, secure messaging, and payment processing.",
       features: [
@@ -117,15 +117,15 @@ const Projects = () => {
       ],
       duration: "2 weeks",
       teamSize: "3 developers",
-      challenges: "Developing accurate skill matching algorithms"
+      challenges: ""
     },
     {
       title: "AI-Device-Recommendation-Platform",
       description: "Next.js 14 AI-powered recommendation platform using Google Gemini API for smart device suggestions. Includes TypeScript implementation, Tailwind CSS styling, multi-category support, and responsive web interface.",
       tech: ["TypeScript", "React 18 ", "Gemini AI ", "Tailwind CSS"],
       image: deviceImg, // Fixed: use the imported variable
-      github: "https://github.com/VenushanT/-crime-report",
-      live: "#",
+      github: "https://github.com/VenushanT/AI-Device-Recommendation-Platform-",
+      live: "https://github.com/VenushanT/AI-Device-Recommendation-Platform-",
       featured: false,
       detailedDescription: "An AI-driven device recommendation platform that leverages Google Gemini AI to provide personalized technology suggestions across laptops, smartphones, headphones, and keyboards based on user needs, budget, and usage patterns.",
       features: [
