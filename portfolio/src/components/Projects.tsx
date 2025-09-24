@@ -120,6 +120,29 @@ const Projects = () => {
       challenges: ""
     },
     {
+  title: "PORTFOLIO WEBSITE",
+  description: "Modern responsive portfolio website built with React 18, TypeScript, and Tailwind CSS. Features interactive 3D elements using Spline, smooth animations with GSAP, and a fully responsive design optimized for all devices.",
+  tech: ["React 18", "TypeScript", "Tailwind CSS", "Spline 3D", "GSAP", "Vite"],
+  image: deviceImg,
+  github: "https://github.com/VenushanT/portfolio",
+  live: "https://venushant.github.io/portfolio/",
+  featured: false,
+  detailedDescription: "A modern, interactive portfolio website showcasing full-stack development skills. Built with cutting-edge technologies including React 18, TypeScript, and Tailwind CSS for optimal performance and maintainability. Features stunning 3D interactive elements powered by Spline, smooth animations using GSAP, and a fully responsive design that works seamlessly across all devices from mobile to desktop.",
+  features: [
+    "Interactive 3D elements and animations",
+    "Fully responsive design for all devices",
+    "Modern UI/UX with smooth transitions",
+    "Optimized performance and loading",
+    "Clean, maintainable codebase",
+    "SEO-friendly structure",
+    "CI/CD pipeline with GitHub Actions",
+    "Professional project showcase"
+  ],
+  duration: "3 weeks",
+  teamSize: "1 developer",
+  challenges: "Integrating complex 3D elements while maintaining optimal performance across all devices and implementing smooth responsive transitions without compromising loading speed"
+},
+    {
       title: "AI-Device-Recommendation-Platform",
       description: "Next.js 14 AI-powered recommendation platform using Google Gemini API for smart device suggestions. Includes TypeScript implementation, Tailwind CSS styling, multi-category support, and responsive web interface.",
       tech: ["TypeScript", "React 18 ", "Gemini AI ", "Tailwind CSS"],
@@ -142,6 +165,7 @@ const Projects = () => {
       teamSize: "1 developer",
       challenges: "Securing API keys and preventing abuse without proper rate limiting or rotation mechanisms"
     }
+    
   ];
 
   const featuredProjects = projects.filter(project => project.featured);
